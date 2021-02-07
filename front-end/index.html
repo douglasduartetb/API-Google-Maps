@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapa</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbKs_zBvbMG1kSK7Ffw3usDcu7fGkXF_g&callback=initMap&libraries=&v=weekly"defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    
+  </head>
+    <body>
+
+    <div id="map"></div>
+    
+    <!-- BOTÃO NO MAPA PARA FAZER A CONSULTA DOS ITENS -->
+    <button id="btConsult" type="button" class="btn btn-light" onclick="btConsult()">
+        Consultar
+    </button>
+
+    <!-- MODAL PERGUNTAR AO USUÁRIO SE ELE DESEJA CADASTRAR UM NOVO ITEM -->
+    <div class="modal" tabindex="-1" id="modalConfirm" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+              <p>Você deseja cadastrar um novo item ?</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+              <button type="button" id="btConfirm" class="btn btn-primary" data-dismiss="modal">Sim</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MODAL PARA INSERIR OS ITENS -->
+    <div class="modal" tabindex="-1" role="dialog" id="modalInsert">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Cadastro de Item</h5>
+              <button id="X" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p><b>Descrição do Item:</b><input type="text" id="inputDescription" size="41%" required></p>
+          </div>
+          <div class="modal-footer">
+              <button id="cancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button id="save" type="submit" class="btn btn-primary" data-dismiss="modal">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- MODAL PARA A CONSULTA DOS ITENS -->
+    <div class="modal" tabindex="-1" role="dialog" id="modalConsult">
+      <div class="modal-dialog" role="document" id="modalSizeConsult">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #363636;">
+              <h5 class="modal-title" id="titleModal" style="color: white;">Itens Cadastrados</h5>
+              <button style="color: white;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body" id="bodyModalConsult" style="background-color: #CFCFCF;">
+            <div id="descriptions"></div>
+          </div>
+       </div>
+      </div>
+    </div>
+
+    <!-- MODAL PARA CONFIRMAR SE O USUÁRIO DESEJA DELETAR O ITEM -->
+      <div class="modal" tabindex="-1" id="modalConfirmDelete" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+                <p>Você tem certeza que deseja excluir o item ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+                <button type="button" id="btConfirmDelete" class="btn btn-primary" data-dismiss="modal">Sim</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="./index.js"></script>
+    </body>
+</html>
+

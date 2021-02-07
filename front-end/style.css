@@ -1,0 +1,102 @@
+/* ESTILO PARA O MAPA */
+#map {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ESTILO PARA O BOTÃO DE CONSULTAR */
+#btConsult {
+  width: 150px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: white;
+  height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-size: auto;
+  text-align: center;
+}
+
+/* ESTILO PARA O BOTÃO DE CONSULTAR QUANDO O MOUSE PASSAR POR CIMA */
+#btConsult:hover {
+  background-color: whitesmoke;
+}
+
+/* ESTILO PARA TODOS OS MODAIS */
+.modal {
+  margin: 0 auto;
+  align-content: center;
+}
+
+/* ESTILO PARA O TÍTULO DO MODAL DE CONSULTA */
+#titleModal {
+  font-weight: bold;
+}
+
+/* ESTILO PARA O INPUT DE DESCRIÇÃO */
+#inputDescription {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* ESTILO PARA AJUSTAR O MODAL DE CONSULTA */
+#modalSizeConsult {
+  overflow-y: initial;
+  max-height: 85%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* ESTILO PARA O CORPO DO MODAL DE CONSULTA */
+#bodyModalConsult {
+  height: 250px;
+  overflow-y: auto;
+}
+
+/* ESTILO PARA O BOTÃO DE DELETAR DA FUNCAO DE DELETAR DENTRO DO APPEND NO JAVASCRIPT */
+#btDeleteAppend {
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+/*  ESTILO PARA O BOTÃO QUE FICA DENTRO DO APPEND NO JAVASCRIPT PARA
+ POSICIONAR O MAPA SOBRE A COORDENADA DO ITEM SALVO */
+#btSearchAppend {
+  cursor: pointer;
+  margin-right: 12px;
+  margin-bottom: 4px;
+}
+
+/* ESTILO PARA O HR DENTRO DO APPEND NO JAVASCRIPT */
+#lineModal {
+  border: 1px solid black;
+}
+
+/* ESTILO PARA A DIV QUE TEM DENTRO DELA OS ÍCONES DE EXCLUIR E APROXIMAR */
+#twoIcons{
+  display: inline;
+  padding-left: 12px;
+  position: absolute;
+  right: 4%;
+}
+
+/* ESTILO PARA O DIV DE CONSULTA */
+#divConsult {
+  border-right: 3px solid black;
+  display: inline-block;
+  width: 85%;
+  height: 34px;
+  word-wrap: break-word;
+  font-weight: bold;
+}
