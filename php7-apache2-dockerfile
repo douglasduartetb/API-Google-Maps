@@ -1,0 +1,30 @@
+FROM php:7.3.16-apache
+WORKDIR /var/www/html
+RUN docker-php-ext-install pdo_mysql
+RUN apt-get update && apt-get install -y \
+    zlib1g-dev \
+    libzip-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev 
+RUN docker-php-ext-configure zip --with-libzip
+RUN docker-php-ext-install zip
+
+RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/
+RUN docker-php-ext-install gd
+
+RUN docker-php-ext-install calendar
+
+RUN a2enmod rewrite
+
+COPY ["openssl.cnf","/etc/ssl/"]
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# exemplo de como usar o composer com docker
+# docker exec -i apache_geogrid bash -c "cd /var/www/html/php/bibliotecasPHP && composer require nikic/fast-route"
+
+# exemplo de como usar o composer com docker - API NOVA
+# docker exec -i apache_geogrid bash -c "cd /var/www/html/api/v3 && composer require nikic/fast-route"
+
+
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
