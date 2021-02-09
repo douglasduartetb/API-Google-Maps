@@ -16,8 +16,6 @@ RUN docker-php-ext-install calendar
 
 RUN a2enmod rewrite
 
-COPY ["openssl.cnf","/etc/ssl/"]
-
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # exemplo de como usar o composer com docker
